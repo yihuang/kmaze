@@ -107,7 +107,7 @@ class MazeView(Widget):
         #y = self.mazeSize-y-1
         cellSize = int(self.size[0] / self.mazeSize)
         offset = cellSize / 2 + 1
-        return (cellSize * x + offset, self.size[0] - (cellSize * y + offset)-1)
+        return (cellSize * x + offset + self.pos[0], self.size[0] - (cellSize * y + offset)-1 + self.pos[1])
 
     def on_size(self, instance, value):
         Clock.schedule_once(self.init_texture)
